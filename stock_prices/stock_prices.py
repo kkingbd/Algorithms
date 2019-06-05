@@ -3,7 +3,15 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  largest_profit = 0
+  for count, i in enumerate(prices):
+    for i2 in prices[count + 1 : ]:
+      profit = i2 - i 
+      if largest_profit == 0 or profit > largest_profit:
+        largest_profit = profit
+  return largest_profit
+
+#Time complexity = O(n*n) = O(n^2)
 
 
 if __name__ == '__main__':
